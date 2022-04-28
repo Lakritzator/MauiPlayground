@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SelectionFormExample.MainPage"
+             Title="Hey!"
+             BindingContext="{Binding Source={RelativeSource Self}}">
+
+    <AbsoluteLayout>
+        <VerticalStackLayout Spacing="25" Padding="30" WidthRequest="{Binding WindowWidth}">
+
+            <Label 
+                Text="Hello, World!"
+                SemanticProperties.HeadingLevel="Level1"
+                FontSize="32"
+                HorizontalOptions="Center" />
+
+            <Label 
+                Text="Welcome to .NET Multi-platform App UI"
+                SemanticProperties.HeadingLevel="Level1"
+                SemanticProperties.Description="Welcome to dot net Multi platform App U I"
+                FontSize="18"
+                HorizontalOptions="Center" />
+
+            <HorizontalStackLayout Grid.Row="2" HorizontalOptions="Center">
+                <Label Text="Current count:" FontSize="18" FontAttributes="Bold"/>
+                <Label Text="{Binding Counter}" FontSize="18" FontAttributes="Bold"/>
+            </HorizontalStackLayout>
+
+            <Button 
+                Text="Click me"
+                FontAttributes="Bold"
+                SemanticProperties.Hint="Counts the number of times you click"
+                Clicked="OnCounterClicked"
+                HorizontalOptions="Center" />
+
+            <Image
+                Source="dotnet_bot.png"
+                SemanticProperties.Description="Cute dot net bot waving hi to you!"
+                WidthRequest="250"
+                HeightRequest="310"
+                HorizontalOptions="Center" />
+
+        </VerticalStackLayout>
+        <Line X1="0" X2="{Binding WindowWidth}" Y1="0" Y2="0" Stroke="Red" StrokeThickness="1"  TranslationY="{Binding MouseY}" WidthRequest="{Binding WindowWidth}" HeightRequest="{Binding WindowHeight}"/>
+        <Line X1="0" X2="0" Y1="0" Y2="{Binding WindowHeight}" Stroke="Red" StrokeThickness="1"  TranslationX="{Binding MouseX}" WidthRequest="{Binding WindowWidth}" HeightRequest="{Binding WindowHeight}"/>
+    </AbsoluteLayout>
+</ContentPage>
